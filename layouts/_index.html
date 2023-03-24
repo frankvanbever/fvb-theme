@@ -1,6 +1,6 @@
 {{ define "main" }}
     <h1>{{ .Title }}</h1>
-    {{ range .RegularPages.ByPublishDate.Reverse }}
+    {{ range .Pages.ByPublishDate.Reverse }}
     <p>
         <h3><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
         <a class="summary" href="{{ .RelPermalink }}">
