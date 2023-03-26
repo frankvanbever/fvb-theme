@@ -4,4 +4,10 @@ h1,h2,h3 {
 
 body {
     font-family: 'Roboto Slab', serif;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+code {
+    font-family: 'IBM Plex Mono', monospace;
 }
