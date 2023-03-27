@@ -1,6 +1,15 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><h1>{{ .Site.Title }}{{if not (eq .Site.Title .Title) }}/{{ lower .Title }}{{ end }}</h1></a>
+        {{ $foo := "" }}
+        {{ if not (eq .Site.Title .Title) }}
+        {{ $foo = .Section }}
+        {{ else }}
+        {{ $foo = " " }}
+        {{ end }}
+        {{ if (and (eq $foo "") (not (eq .Title ""))) }}
+        {{ $foo = .Title }}
+        {{ end }}
+        <a class="navbar-brand" href="#"><h1>{{ .Site.Title }}/{{ lower $foo }}</h1></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
